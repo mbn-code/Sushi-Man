@@ -7,13 +7,13 @@ This game is a 2D platformer where you control a Chinese man on a quest to overc
 
 ## Features 🚀
 
-- **Secret Easter Egg Boss:** Uncover hidden secrets and engage in an epic dogfight with a secret boss. > [!IMPORTANT]
+- **Secret Easter Egg Boss:** Uncover hidden secrets and engage in an epic dogfight with a secret boss. 
 - **Sushi Pickup Collections:** Collect sushi scattered throughout the levels to earn points.
 - **Sushi Power Ups:** Grab sushi power-ups to enhance your abilities and gain an edge in the game.
 - **Multiple Levels:** Explore diverse levels with increasing difficulty as you progress through the game.
 - **Mimic Fight:** Face off against a mimic version of yourself in the ultimate showdown as the final boss.
 - **Sound Effects by Will I Am:** Enjoy immersive sound effects crafted by the talented Will I Am.
-- **Sushi Rain Power-Up:** Experience the excitement of sushi raining down, which you can collect to gain advantages. > [!TIP]
+- **Sushi Rain Power-Up:** Experience the excitement of sushi raining down, which you can collect to gain advantages.
 - **Chinese Circle Symbols:** Gather these symbols occasionally to unlock powerful enhancements.
 - **Currency System:** Use the currency you collect in a store to purchase upgrades and abilities for the next round.
 - **Ultra Instinct Power-Up:** Activate the Ultra Instinct power-up with a cinematic animation for an unstoppable boost.
