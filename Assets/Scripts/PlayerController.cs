@@ -28,29 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            Rbody.velocity = new Vector2(Rbody.velocity.x, jumpingPower);
-            AnimController.SetTrigger("Jump");
-        }
-
-        if(Input.GetButtonUp("Jump") && Rbody.velocity.y > 0f)
-        {
-            Rbody.velocity = new Vector2(Rbody.velocity.x, Rbody.velocity.y * 0.5f);
-            AnimController.SetTrigger("Jump");
-        }
-
-        if (Rbody.velocity.y < 0f)
-        {
-            if(!AnimController.GetBool("Falling"))
-                AnimController.SetBool("Falling", true);
-        } else
-        {
-            if (AnimController.GetBool("Falling"))
-                AnimController.SetBool("Falling", false);
-        }
-
-        if(Rbody.velocity.x > 0.05f)
+        if(horizontal != 0 && IsGrounded())
         {
             if (!AnimController.GetBool("Running"))
                 AnimController.SetBool("Running", true);
@@ -60,12 +38,44 @@ public class PlayerController : MonoBehaviour
                 AnimController.SetBool("Running", false);
         }
 
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            if (AnimController.GetBool("Running"))
+                AnimController.SetBool("Running", false);
+
+            AnimController.SetTrigger("Jump");
+            Rbody.velocity = new Vector2(Rbody.velocity.x, jumpingPower);
+        }
+
+        if(Input.GetButtonUp("Jump") && Rbody.velocity.y > 0f)
+        {
+            if (AnimController.GetBool("Running"))
+                AnimController.SetBool("Running", false);
+
+            AnimController.SetTrigger("Jump");
+            Rbody.velocity = new Vector2(Rbody.velocity.x, Rbody.velocity.y * 0.5f);
+        }
+
         Flip();
     }
 
     private void FixedUpdate()
     {
         Rbody.velocity = new Vector2(horizontal * speed, Rbody.velocity.y);
+
+        if (Rbody.velocity.y < 0f)
+        {
+            if (AnimController.GetBool("Running"))
+                AnimController.SetBool("Running", false);
+
+            if (!AnimController.GetBool("Falling"))
+                AnimController.SetBool("Falling", true);
+        }
+        else
+        {
+            if (AnimController.GetBool("Falling"))
+                AnimController.SetBool("Falling", false);
+        }
     }
 
     private bool IsGrounded()
