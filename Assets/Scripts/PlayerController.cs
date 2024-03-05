@@ -56,6 +56,18 @@ public class PlayerController : MonoBehaviour
             Rbody.velocity = new Vector2(Rbody.velocity.x, Rbody.velocity.y * 0.5f);
         }
 
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            if(!IsInAttackAnim())
+                AnimController.SetTrigger("Attack1");
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (!IsInAttackAnim())
+                AnimController.SetTrigger("Attack2");
+        }
+
         Flip();
     }
 
@@ -81,6 +93,14 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private bool IsInAttackAnim()
+    {
+        if (AnimController.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || AnimController.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+            return true;
+
+        return false;
     }
 
     private void Flip()
