@@ -12,6 +12,12 @@ public class PlayerController : MonoBehaviour
     private bool Dead = false;
 
     [SerializeField]
+    private GameObject LightObject;
+
+    [SerializeField]
+    private GameObject HeavyObject;
+
+    [SerializeField]
     private Rigidbody2D Rbody;
 
     [SerializeField]
@@ -61,17 +67,30 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.J))
         {
-            if(!IsInAttackAnim())
+            if (!IsInAttackAnim())
+            {
+                StartCoroutine("EnableAndDisable", LightObject);
                 AnimController.SetTrigger("Attack1");
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
             if (!IsInAttackAnim())
+            {
+                StartCoroutine("EnableAndDisable", HeavyObject);
                 AnimController.SetTrigger("Attack2");
+            }
         }
 
         Flip();
+    }
+
+    private IEnumerator EnableAndDisable(GameObject Object)
+    {
+        Object.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        Object.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -121,6 +140,8 @@ public class PlayerController : MonoBehaviour
 
     public void KillMe()
     {
+        AnimController.SetBool("Running", false);
+        AnimController.SetBool("Falling", false);
         AnimController.SetTrigger("Death");
         Dead = true;
     }
