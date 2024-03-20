@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
     private Animator AnimController;
+    private bool Dead = false;
 
     [SerializeField]
     private Rigidbody2D Rbody;
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Dead) return;
+
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if(horizontal != 0 && IsGrounded())
@@ -73,6 +76,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Dead) return;
+
         Rbody.velocity = new Vector2(horizontal * speed, Rbody.velocity.y);
 
         if (Rbody.velocity.y < 0f)
@@ -112,5 +117,11 @@ public class PlayerController : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    public void KillMe()
+    {
+        AnimController.SetTrigger("Death");
+        Dead = true;
     }
 }
