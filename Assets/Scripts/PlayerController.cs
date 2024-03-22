@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask groundLayer;
 
+    [SerializeField]
+    private Spawner SpawnerInstance;
+
+
     private void Awake()
     {
         AnimController = GetComponent<Animator>();
@@ -144,5 +148,6 @@ public class PlayerController : MonoBehaviour
         AnimController.SetBool("Falling", false);
         AnimController.SetTrigger("Death");
         Dead = true;
+        SpawnerInstance.DeleteAllBalls();
     }
 }

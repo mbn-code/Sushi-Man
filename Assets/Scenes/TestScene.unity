@@ -258,46 +258,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4326729853620499225, guid: 16c2a48ecf4c44a1f92107a99398871a, type: 3}
   m_PrefabInstance: {fileID: 1926921540741260738}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1893593913 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7777663379665034898, guid: 2e2e1048e0c5441c08e8fcfc51c496ac, type: 3}
-  m_PrefabInstance: {fileID: 3460546434876306699}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &1893593920
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893593913}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00000011920929}
-  serializedVersion: 2
-  m_Radius: 1.6191908
 --- !u!1 &2002903211
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,10 +431,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 309004785423350452, guid: 2e2e1048e0c5441c08e8fcfc51c496ac, type: 3}
-      propertyPath: StopHeight
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5611019648246075321, guid: 2e2e1048e0c5441c08e8fcfc51c496ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.81
@@ -519,29 +475,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 7777663379665034898, guid: 2e2e1048e0c5441c08e8fcfc51c496ac, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7777663379665034898, guid: 2e2e1048e0c5441c08e8fcfc51c496ac, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604271862322444651, guid: 2e2e1048e0c5441c08e8fcfc51c496ac, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604271862322444651, guid: 2e2e1048e0c5441c08e8fcfc51c496ac, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7777663379665034898, guid: 2e2e1048e0c5441c08e8fcfc51c496ac, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1893593920}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e2e1048e0c5441c08e8fcfc51c496ac, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
