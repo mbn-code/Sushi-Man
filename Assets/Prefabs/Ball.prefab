@@ -210,4 +210,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679a0424119df42389659b533e0dcbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StopHeight: 3
+  StopHeight: 6
