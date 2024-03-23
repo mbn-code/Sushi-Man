@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Sushi-Man.sln"
+    "dotnet.defaultSolution": "Sushi-Man.sln",
+    "dotnet.preferCSharpExtension": true
 }
