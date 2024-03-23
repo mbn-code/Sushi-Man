@@ -6,6 +6,26 @@ Welcome to Sushi-Man 2D Platformer Adventure! Embark on a thrilling journey thro
 
 Sushi-Man is a 2D platformer where you control a character on a quest to overcome obstacles, collect sushi, and defeat powerful bosses. 
 
+## Need to Have 🎯
+
+These are the essential features that our game must have to function as intended:
+
+- **Player Controls:** The ability for the player to control the character's movement and actions.
+- **Level Design:** Multiple levels with increasing difficulty and unique challenges.
+- **Sushi Pickups:** Sushi items that the player can collect to earn points.
+- **Boss Fights:** Challenging boss fights at the end of certain levels.
+- **Game Progression:** A system to track and save the player's progress through the game.
+
+## Nice to Have 🌟
+
+These are additional features that would enhance the game but are not critical to its basic functionality:
+
+- **Secret Easter Egg Boss:** A hidden boss fight that players can discover for an extra challenge.
+- **Sushi Power-Ups:** Special sushi items that give the player temporary power-ups.
+- **Mimic Fight:** A special level where the player must fight a mimic version of their character.
+- **Currency System:** A system where players can collect currency during gameplay and use it to purchase upgrades or abilities.
+- **Ultra Instinct Power-Up:** A special power-up that gives the player a significant boost for a short period.
+
 ## Features 🚀
 
 - **Secret Easter Egg Boss:** Uncover hidden secrets and engage in an epic fight with a secret boss.

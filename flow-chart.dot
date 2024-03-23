@@ -1,0 +1,25 @@
+digraph G {
+    rankdir=LR;
+    node [shape=box, style=filled, color="black", fontcolor="white"];
+    edge [color="black", fontcolor="black"];
+
+    Start [label="Start Game", fillcolor="darkgreen"];
+    MainMenu [label="Main Menu", fillcolor="darkorange"];
+    LevelSelection [label="Level Selection", fillcolor="darkorange"];
+    Gameplay [label="Gameplay", fillcolor="darkorange"];
+    BossFight [label="Boss Fight", fillcolor="red"];
+    GameOver [label="Game Over", fillcolor="red"];
+    Victory [label="Victory", fillcolor="darkgreen"];
+    Store [label="Store", fillcolor="blue"];
+
+    Start -> MainMenu;
+    MainMenu -> LevelSelection;
+    LevelSelection -> Gameplay;
+    Gameplay -> BossFight [label="Encounter Boss", fontcolor="red"];
+    Gameplay -> Store [label="Collect Currency", fontcolor="blue"];
+    Store -> Gameplay [label="Buy Upgrades", fontcolor="blue"];
+    BossFight -> GameOver [label="Lose", fontcolor="red"];
+    BossFight -> Victory [label="Win", fontcolor="darkgreen"];
+    GameOver -> MainMenu [label="Restart", fontcolor="darkorange"];
+    Victory -> MainMenu [label="Play Again", fontcolor="darkorange"];
+}
