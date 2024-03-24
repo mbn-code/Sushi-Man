@@ -10,7 +10,10 @@ public class ItemDrop : MonoBehaviour
     private void Start()
     {
         RBody = GetComponent<Rigidbody2D>();
-        RBody.AddForce(Vector2.up * DropForce, ForceMode2D.Impulse);
+        float randomX = Random.Range(-1f, 1f);
+        Vector2 force = new Vector2(randomX, 1) * DropForce;
+        RBody.AddForce(force, ForceMode2D.Impulse);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

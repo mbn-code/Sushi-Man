@@ -198,16 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdaa8826925724f7a96885a4eb57cd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemDrops:
-  - {fileID: 2373872112244068729, guid: d9f9d4bbb8faeb747ae8f914f4baf354, type: 3}
-  - {fileID: 4123289119098530252, guid: a741367a269673741a2517f2696e0749, type: 3}
-  - {fileID: 6051160930992550990, guid: 8b12ce7a30eb92240b4bc65bbb917576, type: 3}
-  - {fileID: 7891794303789928217, guid: ab489e56ceee0a44bb06d82d146b5916, type: 3}
-  - {fileID: 3529324201552949940, guid: e33c9743330e5b144aff86a38a057e69, type: 3}
-  - {fileID: 6962760862505349153, guid: 8c72ab5bd7faa3a4499a9b96f0482218, type: 3}
-  - {fileID: 975380057263627101, guid: 627af414e41088d4695417cf347fdf89, type: 3}
-  - {fileID: 1264958867427109576, guid: fe2108a367ea90945862b2e1349b36bf, type: 3}
-  - {fileID: 5276923417832921110, guid: 399bd594bed620b4e886a8a2c1558d2b, type: 3}
 --- !u!114 &309004785423350452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,4 +210,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679a0424119df42389659b533e0dcbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StopHeight: 2
+  StopHeight: 8

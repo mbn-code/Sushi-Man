@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1007160008560107964}
   - component: {fileID: 1009980458911041738}
   - component: {fileID: -3796031018221288559}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sushi5
   m_TagString: Untagged
   m_Icon: {fileID: 0}

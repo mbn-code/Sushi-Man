@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 373335819947006867}
   - component: {fileID: 9141453949410223939}
   - component: {fileID: 3495624360546729184}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sushi2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

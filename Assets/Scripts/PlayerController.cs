@@ -25,8 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Spawner SpawnerInstance;
     [SerializeField] internal GameManager GM;
-
-
+    [SerializeField] internal RadialManager RDManager;
 
     private void Awake()
     {
@@ -97,7 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.35f);
         Object.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         Object.SetActive(false);
     }
 
@@ -156,6 +155,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashingTime);
         Rbody.gravityScale = originalGravity;
         isDashing = false;
+        RDManager.RunRadial();
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
@@ -167,6 +167,13 @@ public class PlayerController : MonoBehaviour
         AnimController.SetTrigger("Death");
         Dead = true;
         SpawnerInstance.DeleteAllBalls();
+        StartCoroutine("RestartGame");
+    }
+
+    private IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(1.5f);
+        GM.Restart();
     }
 
     internal void RemoveBallFromSpawner(GameObject BallObject)

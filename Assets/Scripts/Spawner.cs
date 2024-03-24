@@ -1,19 +1,22 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Spawner : MonoBehaviour{
 
     [SerializeField] private GameObject[] SpawnerList;
-    [SerializeField] private float spawnTime = 2f;
+    [SerializeField] internal float spawnTime = 2f;
     [SerializeField] private GameObject BallObject;
-    
-    internal int MaxBalls = 1;
+    [SerializeField] internal int MaxBalls = 1;
+    [SerializeField] GameManager GM;
 
     private float Timer;
 
     private List<GameObject> Balls = new List<GameObject>();
 
     private bool isSpawning = true;
+
+    private int SpawnedAmount = 0;
 
     [SerializeField]
     private GameObject[] ItemDrops;
@@ -28,6 +31,13 @@ public class Spawner : MonoBehaviour{
     }
 
     void SpawnBall() {
+
+        SpawnedAmount++;
+        if (SpawnedAmount >= MaxBalls)
+        {
+            isSpawning = false;
+        }
+
         int randomIndex = Random.Range(0, SpawnerList.Length);
         GameObject spawner = SpawnerList[randomIndex];
         Vector3 spawnPosition = spawner.transform.position;
@@ -46,11 +56,36 @@ public class Spawner : MonoBehaviour{
         DropItem(BallObject);
         Balls.Remove(BallObject);
         Destroy(BallObject);
+        if (Balls.Count == 0 && !isSpawning)
+        {
+            StartCoroutine("GoToShop");
+        }
+    }
+
+    private IEnumerator GoToShop()
+    {
+        yield return new WaitForSeconds(5f);
+        GM.FadeToNext("ShopBoy");
     }
 
     internal void DropItem(GameObject Enemy)
     {
-        int RandomAmount = Random.Range(1, 2);
+        int MaxDrop = 5;
+
+        switch(PlayerPrefs.GetInt("Dif"))
+        {
+            case 1:
+                MaxDrop = 5;
+                break;
+            case 2:
+                MaxDrop = 10;
+                break;
+            case 3:
+                MaxDrop = 15;
+                break;
+        }
+
+        int RandomAmount = Random.Range(1, MaxDrop);
 
         for(int i = 0; i < RandomAmount; i++)
         {
