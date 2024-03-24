@@ -8,7 +8,7 @@ public class HitDetection : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Hit an Enemy");
+            GetComponentInParent<PlayerController>().RemoveBallFromSpawner(collision.gameObject);
         }
     }
 }

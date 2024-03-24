@@ -18,14 +18,12 @@ public class BallMaxer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 vel = RBody.velocity;
-        vel.x = 0;
-
-
         if (Trans.position.y >= StopHeight)
         {
+            Vector2 NewVelocity = new Vector2(RBody.velocity.x, 0);
+
             if(!(RBody.velocity.y < 0f))
-                RBody.velocity = Vector2.zero;
+                RBody.velocity = NewVelocity;
         }
     }
 }

@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Spawner SpawnerInstance;
 
+    [SerializeField]
+    internal GameManager GM;
 
     private void Awake()
     {
@@ -92,6 +94,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator EnableAndDisable(GameObject Object)
     {
+        yield return new WaitForSeconds(0.35f);
         Object.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         Object.SetActive(false);
@@ -149,5 +152,10 @@ public class PlayerController : MonoBehaviour
         AnimController.SetTrigger("Death");
         Dead = true;
         SpawnerInstance.DeleteAllBalls();
+    }
+
+    internal void RemoveBallFromSpawner(GameObject BallObject)
+    {
+        SpawnerInstance.RemoveBall(BallObject);
     }
 }
