@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -166,13 +167,19 @@ public class PlayerController : MonoBehaviour
         AnimController.SetBool("Falling", false);
         AnimController.SetTrigger("Death");
         Dead = true;
-        SpawnerInstance.DeleteAllBalls();
+        if(SpawnerInstance != null)
+            SpawnerInstance.DeleteAllBalls();
         StartCoroutine("RestartGame");
     }
 
     private IEnumerator RestartGame()
     {
-        yield return new WaitForSeconds(1.5f);
+        if(SceneManager.GetActiveScene().name == "FightArea")
+            yield return new WaitForSeconds(1.5f);
+
+        if(SceneManager.GetActiveScene().name == "BossArena")
+            yield return new WaitForSeconds(10f);
+
         GM.Restart();
     }
 

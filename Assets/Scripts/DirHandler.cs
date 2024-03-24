@@ -13,7 +13,7 @@ public class DirHandler : MonoBehaviour
         {
             if (Boss)
             {
-
+                GM.FadeToNext("BossArena");
             }
             else
             {

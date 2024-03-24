@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f5fbf53147d50ee468e81e9150eb4d2d
+  - enabled: 1
     path: Assets/Scenes/FightArea.unity
     guid: 49a4594a979354d148c6bc4991473069
   - enabled: 1
     path: Assets/Scenes/ShopBoy.unity
     guid: 640b4e72259a148a68aea89aed31bb4a
+  - enabled: 1
+    path: Assets/Scenes/BossArena.unity
+    guid: 4d27ca90120394049a53268e70d07c87
   m_configObjects: {}
