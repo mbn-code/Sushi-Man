@@ -24772,6 +24772,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 595423804}
     - target: {fileID: 8154363148532145446, guid: 16c2a48ecf4c44a1f92107a99398871a, type: 3}
+      propertyPath: DashingUnlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154363148532145446, guid: 16c2a48ecf4c44a1f92107a99398871a, type: 3}
       propertyPath: SpawnerInstance
       value: 
       objectReference: {fileID: 1535528038}
