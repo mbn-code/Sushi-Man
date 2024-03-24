@@ -53,7 +53,11 @@ public class Spawner : MonoBehaviour{
 
     internal void RemoveBall(GameObject BallObject)
     {
-        DropItem(BallObject);
+        StartCoroutine(SpawnItems(BallObject));
+    }
+
+    private void Finish(GameObject BallObject)
+    {
         Balls.Remove(BallObject);
         Destroy(BallObject);
         if (Balls.Count == 0 && !isSpawning)
@@ -94,4 +98,38 @@ public class Spawner : MonoBehaviour{
             Instantiate(itemDrop, Enemy.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }
     }
+
+    IEnumerator SpawnItems(GameObject Enemy)
+    {
+        Vector3 SpawnPos = Enemy.transform.position;
+        Enemy.transform.position = new Vector3(1000, 10000, 0);
+        int MaxDrop = 5;
+
+        switch (PlayerPrefs.GetInt("Dif"))
+        {
+            case 1:
+                MaxDrop = 5;
+                break;
+            case 2:
+                MaxDrop = 10;
+                break;
+            case 3:
+                MaxDrop = 15;
+                break;
+        }
+
+        int RandomAmount = Random.Range(1, MaxDrop);
+
+        for (int i = 0; i < RandomAmount; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            int randomIndex = Random.Range(0, ItemDrops.Length);
+            GameObject itemDrop = ItemDrops[randomIndex];
+            Instantiate(itemDrop, SpawnPos + new Vector3(0, 1, 0), Quaternion.identity);
+        }
+
+        Finish(Enemy);
+    }
+
+
 }
